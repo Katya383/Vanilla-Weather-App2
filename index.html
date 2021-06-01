@@ -10,13 +10,14 @@
       integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
 
     <title>Vanilla Weather App</title>
   </head>
   <body>
     <div class="container"></div>
-    <div class= weather-app-wrapper"></div>
+    <div class= "weather-app-wrapper"></div>
     <div class= "weatherapp"></div>
       <form>
        <div class ="row">
@@ -31,25 +32,16 @@
       <div class = "WeatherInfo">
         <div class = "row">
           <div class ="col-6">
-            <h1>New York</h1>
+            <h1 id ="city"></h1>
             <ul>
               <li>
                 <span>
                   Sunday 19:52
-          </span>
-           Cloudy
+                </span >
+                <li id ="description">
               </li>
-              <li>
-                Humidity:
-                <strong>
-                  57
-                  %
-                </strong>
-                Wind:
-                <strong>
-                  0.45 km/h
-                </strong>
-              </li>
+              <li>Humidity:<span id= "humidity"></span></li>
+                <li>Wind:<span id = "wind"></span>km/hr</li>
             </ul>
           </div>
           <div class = "col-6">
@@ -59,7 +51,7 @@
                 id="icon"
                 class="float-left"
             /> 
-            <strong>17</strong> °C |  °F
+            <strong id = "temperature"></strong> °C |  °F
                <div class= "temperture" id = units>
                </div>
                </div>
