@@ -1,15 +1,23 @@
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
 .weather-app-wrapper {
   max-width: 600px;
   margin: 30px auto;
 }
-.weatherapp {
+.weather-app {
   margin: 30px auto;
-  padding: 2020 px;
+  padding: 20 px;
   border: 1px solid #708090;
   border-radius: 5px;
 }
+.overview {
+  margin-bottom: 20px;
+}
 .weather-temperature img {
-  margin-left: 10px;
+  margin-right: 5px;
   height: 64px;
   width: 64px;
 }
@@ -19,7 +27,7 @@
   line-height: 1;
   font-weight: 400;
 }
-.form-control-search-input {
+.form-control {
   display: block;
   width: 100%;
   padding: 0.375rem 0.75 rem;
@@ -58,6 +66,7 @@ h1 {
   font: 24px;
   font-weight: 100px;
   line-height: 28px;
+  margin-bottom: 0;
 }
 ul {
   margin: 0;
@@ -67,7 +76,6 @@ li {
   list-style: none;
   color: #878787;
   display: block;
-  font-family: arial, sans-sarif;
   font-size: 16px;
   line-height: 19px;
   text-align: left;
