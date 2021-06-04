@@ -21,18 +21,13 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
+
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   return days[day];
-}
-
-function displayForecast(response) {
-  let forecast = response.data.daily;
-
-  let forecastElement = document.querySelector("#forecast");
 }
 
 function displayTemperature(response) {
@@ -46,7 +41,7 @@ function displayTemperature(response) {
 
   celsiusTemperature = response.data.main.temp;
 
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
@@ -54,10 +49,9 @@ function displayTemperature(response) {
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
-    `http:openweathermap.org/img/wn${response.data.weather[0].icon}@2x.png`
+    `http:openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  iconElement.setattribure("alt", response.data.weather[0].description);
-  getForecast(response.data.coord);
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function search(city) {
@@ -68,7 +62,7 @@ function search(city) {
 
 function handleSubmit(event) {
   event.preventDefault();
-  let cityInputElement = document.querySelector("#search-form");
+  let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 }
 let form = document.querySelector("#search-form");
