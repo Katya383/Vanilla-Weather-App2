@@ -23,11 +23,12 @@ body {
 }
 #city-input {
   color: rgba(39, 33, 66, 0.4);
-  background: #f9f7fe;
+  background: white;
   font-weight: 600;
 }
 .overview {
   margin-bottom: 20px;
+  margin-left: 20px;
 }
 .weather-temperature img {
   margin-right: 5px;
