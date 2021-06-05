@@ -66,7 +66,7 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-function displayCelsuisTemperature(event) {
+function displayCelsiusTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
