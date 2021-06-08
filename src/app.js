@@ -37,12 +37,12 @@ function displayForecast(response) {
 
   let forecastHTML = `<dix class="row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index > 0 && index < 6) {
       forecastHTML =
         forecastHTML +
         `
-    <div class="col-2">
-    <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+       <div class="col-2">
+        <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
     <img
     src="https://openweathermap.org/img/wn/${
       forecastDay.weather[0].icon
@@ -68,7 +68,7 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  let apiKey = "ae4032eef8a3f74abc226eb2373f89f0";
+  let apiKey = `ae4032eef8a3f74abc226eb2373f89f0`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
@@ -96,7 +96,7 @@ function displayTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
-  getForecast(response.data.coords);
+  getForecast(response.data.coord);
 }
 
 function search(city) {
